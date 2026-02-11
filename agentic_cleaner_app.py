@@ -11,6 +11,17 @@ import plotly.graph_objects as go
 from agentic_data_cleaner import AgenticDataCleaner, CleaningStep
 import io
 
+def get_check_explanation(check_name):
+    """Provides beginner-friendly explanations for sanity checks."""
+    explanations = {
+        "Missing Values": "Identifying gaps is crucial because most models fail with empty data. We decide whether to fill them or drop them.",
+        "Problem Type": "This tells the AI if it should be 'categorizing' things or 'predicting numbers.' It changes the whole math strategy.",
+        "Data Type": "Machine Learning usually requires numbers. We check if your target needs to be converted from text into a numeric format.",
+        "Unique Values": "Columns with only one value provide zero information. Columns with too many unique values (like IDs) are usually noise."
+    }
+    return explanations.get(check_name, "This check ensures your data is consistent and ready for mathematical modeling.")
+
+
 # Page configuration
 st.set_page_config(
     page_title="🤖 Aka Cleaner",
@@ -795,16 +806,6 @@ elif st.session_state.stage == 'done':
         for key in list(st.session_state.keys()):
             del st.session_state[key]
         st.rerun()
-
-def get_check_explanation(check_name):
-    """Provides beginner-friendly explanations for sanity checks."""
-    explanations = {
-        "Missing Values": "Identifying gaps is crucial because most models fail with empty data. We decide whether to fill them or drop them.",
-        "Problem Type": "This tells the AI if it should be 'categorizing' things or 'predicting numbers.' It changes the whole math strategy.",
-        "Data Type": "Machine Learning usually requires numbers. We check if your target needs to be converted from text into a numeric format.",
-        "Unique Values": "Columns with only one value provide zero information. Columns with too many unique values (like IDs) are usually noise."
-    }
-    return explanations.get(check_name, "This check ensures your data is consistent and ready for mathematical modeling.")
 
 # Footer
 st.markdown("---")
