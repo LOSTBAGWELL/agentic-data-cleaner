@@ -535,6 +535,16 @@ class AgenticDataCleaner:
             summary['insights'].append(f"You simplified your dataset by dropping {summary['columns_changed']} columns, focusing on what's important for analysis.")
         return summary
 
+    def get_check_explanation(check_name):
+    """Provides beginner-friendly explanations for sanity checks."""
+    explanations = {
+        "Missing Values": "We check for blanks because most ML models can't handle empty data. If more than 5% is missing, it might bias your results.",
+        "Problem Type": "This determines if you are predicting a category (Classification) or a number (Regression). This choice changes which algorithms we use.",
+        "Data Type": "Machine Learning models usually need numbers. We check if your target needs to be converted from text into a numeric format.",
+        "Unique Values": "A column with only one value has no information. A column with too many unique values (like a Name) might just be noise."
+    }
+    return explanations.get(check_name, "This check ensures your data is consistent and ready for mathematical modeling.")
+
 
 # Helper functions
 def load_data(file_path: str) -> pd.DataFrame:
