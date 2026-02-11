@@ -1,7 +1,8 @@
-🤖 Aka Cleaner by pR
-Intelligent data cleaning with human-in-the-loop reasoning.
+🤖 Aka Cleaner by pR😅D2Be 
+pR😅D2Be was founded on the belief that intelligence and innovation are not limited by background, ethinicity, environment or status. Every individual and every system deserves to be Proud To Be.
+Aka Cleaner is an intelligent data cleaning tool with human-in-the-loop reasoning.
 
-An open-source tool that doesn't just clean your data—it reasons with you. Aka Cleaner explains its choices, predicts the impact of changes, and requires your approval before modifying a single row.
+An open-source tool that doesn't just clean your data, it reasons with you. Aka Cleaner explains its choices, predicts the impact of changes, and requires your approval before modifying a single row.
 
 🌟 Key Features
 1. Intelligent Target Detection
